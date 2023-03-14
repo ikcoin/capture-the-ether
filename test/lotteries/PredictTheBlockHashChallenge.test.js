@@ -1,14 +1,13 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe.only("PredictTheBlockHashChallenge", async function () {
+describe("PredictTheBlockHashChallenge", async function () {
   let contract;
 
   before(async function () {
     contract = await (
       await ethers.getContractFactory("PredictTheBlockHashChallenge")
     ).deploy({ value: ethers.utils.parseEther("1") });
-    contract;
   });
 
   it("Exploit", async function () {
